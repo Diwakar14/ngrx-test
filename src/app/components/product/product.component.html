@@ -1,0 +1,40 @@
+<div class="card shadow-sm border-0 mb-3 overflow-hidden">
+  <div class="img-holder">
+    <img [src]="product.thumbnail" alt="loading..." width="100%" />
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{ product.title }}</h5>
+    <span class="text-muted">{{ product.description }}</span>
+    <p>
+      Price: <strong> ${{ product.price }}</strong>
+    </p>
+    <div class="btn-group" role="group" aria-label="product-count">
+      <ng-template [ngIf]="count > 0">
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          (click)="updateCart(product, 'add')"
+        >
+          <i class="bi bi-bag-plus"></i>
+        </button>
+        <button type="button" class="btn btn-primary btn-sm" disabled>
+          {{ count }}
+        </button>
+        <button
+          type="button"
+          class="btn btn-primary btn-sm"
+          (click)="updateCart(product, 'remove')"
+        >
+          <i class="bi bi-bag-dash"></i>
+        </button>
+      </ng-template>
+      <button
+        *ngIf="count == 0"
+        class="btn btn-primary btn-sm"
+        (click)="addToCart(product)"
+      >
+        Add to cart
+      </button>
+    </div>
+  </div>
+</div>

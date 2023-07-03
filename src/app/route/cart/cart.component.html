@@ -1,0 +1,23 @@
+<div
+  class="shadow-sm bg-white mb-3 d-flex overflow-hidden"
+  *ngFor="let item of cartProducts$ | async"
+>
+  <div class="img-thumb">
+    <img [src]="item.thumbnail" alt="loading..." width="100%" />
+  </div>
+  <div class="ms-3 p-3">
+    <h5>{{ item.title }}</h5>
+    <p class="mb-0">{{ item.description }}</p>
+    <p class="mb-0">
+      Price: <strong>${{ item.price }}</strong>
+    </p>
+    <p class="mb-0">Quantity: {{ item.quantity }}</p>
+  </div>
+</div>
+
+<div
+  class="shadow-sm bg-light d-flex align-items-center p-4 justify-content-between"
+>
+  <div class="total">Total</div>
+  <div class="totalAmout">${{ totalAmount$ | async }}</div>
+</div>

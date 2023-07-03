@@ -1,0 +1,19 @@
+.img-thumb {
+  width: 140px;
+  img {
+    width: 140px;
+    object-fit: contain;
+  }
+}
+.totalAmout {
+  font-weight: 500;
+}
+.floating-cart {
+  right: 1rem;
+  width: 500px;
+}
+
+.cartItems {
+  max-height: 450px;
+  overflow-x: auto;
+}
